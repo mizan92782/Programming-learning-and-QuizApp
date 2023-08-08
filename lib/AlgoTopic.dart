@@ -3,6 +3,8 @@ import 'package:flutter_application_1/Cquiz.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/darcula.dart';
 
+import 'AlgoQuiz.dart';
+
 
 class Algobasictopic extends StatefulWidget {
   const Algobasictopic({super.key});
@@ -126,15 +128,15 @@ class _AlgobasictopicState extends State<Algobasictopic> {
 
                 Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) =>CbasicQuizpage()));
+              MaterialPageRoute(builder: (context) =>AlgobasicQuizpage()));
               }, 
               child: const Text("Quiz 1")),
               ElevatedButton(onPressed: () {Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) =>CbasicQuizpage()));}, child: const Text("Quiz 2")),
+              MaterialPageRoute(builder: (context) =>AlgobasicQuizpage()));}, child: const Text("Quiz 2")),
               ElevatedButton(onPressed: () {Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) =>CbasicQuizpage()));}, child: const Text("Quiz 3")),
+              MaterialPageRoute(builder: (context) =>AlgobasicQuizpage()));}, child: const Text("Quiz 3")),
             ]),
           ],
         ),
@@ -411,6 +413,7 @@ Combine
 
 
 
+
 class Complexity extends StatefulWidget {
   const Complexity({super.key});
 
@@ -544,6 +547,12 @@ In analyzing the complexity of an algorithm, it is often more informative to stu
     );
   }
 }
+
+
+
+
+
+
 
 
 
@@ -942,15 +951,15 @@ class _algointertopicState extends State<algointertopic> {
 
                 Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) =>CbasicQuizpage()));
+              MaterialPageRoute(builder: (context) =>AlgointerQuizpage()));
               }, 
               child: const Text("Quiz 1")),
               ElevatedButton(onPressed: () {Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) =>CbasicQuizpage()));}, child: const Text("Quiz 2")),
+              MaterialPageRoute(builder: (context) =>AlgointerQuizpage()));}, child: const Text("Quiz 2")),
               ElevatedButton(onPressed: () {Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) =>CbasicQuizpage()));}, child: const Text("Quiz 3")),
+              MaterialPageRoute(builder: (context) =>AlgointerQuizpage()));}, child: const Text("Quiz 3")),
             ]),
           ],
         ),
