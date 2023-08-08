@@ -812,44 +812,16 @@ class Datatype extends StatefulWidget {
 class _DatatypeState extends State<Datatype> {
 
 
-  String one =
-      '''Each variable in C has an associated data type. It specifies the type of data that the variable can store like integer, character, floating, double, etc. Each data type requires different amounts of memory and has some specific operations which can be performed over it. The data type is a collection of data with values having fixed values, meaning as well as its characteristics.\n\nThe data types in C can be classified as follows:
-      
-      
-Primitive Data Types:
-Primitive data types are the most basic data types that are used for representing simple values such as integers, float, characters, etc.
-      
-User Defined Data Types:
-The user-defined data types are defined by the user himself.
-      
-Derived Types:
-The data types that are derived from the primitive or built-in datatypes are referred to as Derived Data Types
-
-
-
-Different data types also have different ranges up to which they can store numbers. These ranges may vary from compiler to compiler. Below is a list of ranges along with the memory requirement and format specifiers on the 32-bit GCC compiler.''';
-
+  
   String two =
       '''Here, a, b, c are variables. The int, float, char are the data types.
 
 ''';
 
-  String code1 = '''
+  
 
-
-
-
- void main() {
-
-
-    int a;
-    float b;
-    double c;
-    char d;
-
-    }''';
-
-  Widget _CodeArea() {
+  
+Widget _CodeArea(String code) {
     return SizedBox(
         child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
@@ -865,15 +837,57 @@ Different data types also have different ranges up to which they can store numbe
                     width: 4.0,
                   ),
                 ),
-                height: 300,
+                
                 child: HighlightView(
-                  code1,
+                  code,
                   language: 'dart',
                   theme: darculaTheme,
                 ),
               ),
             )));
   }
+
+
+
+
+  Widget _boldtext(String str)
+  {
+     return Text(str,
+                style: const TextStyle(
+                    color: Colors.indigoAccent,
+                    fontSize: 23,
+                
+                    fontWeight: FontWeight.bold));
+  }
+
+
+
+  Widget _semiboldtext(String str)
+  {
+     return Text(str,
+                style: const TextStyle(
+                    color: Colors.green,
+                    fontSize: 21,
+                
+                    fontWeight: FontWeight.bold));
+  }
+
+
+
+
+
+    Widget _normaltext(String str)
+  {
+     return Text(str,
+                style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400));
+  }
+
+
+
+
 
   Widget buildTableCell(String text) {
     return Container(
@@ -999,27 +1013,53 @@ Different data types also have different ranges up to which they can store numbe
           padding: EdgeInsets.all(20),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            const Text("Data Type in C",
-                style: TextStyle(
-                    color: Colors.indigoAccent,
-                    fontSize: 23,
-                    fontWeight: FontWeight.bold)),
-            const SizedBox(
-              height: 20,
-            ),
-            Text(one,
-                style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400)),
+             _boldtext('''Data type in C'''),
+             _normaltext('''\nEach variable in C has an associated data type. It specifies the type of data that the variable can store like integer, character, floating, double, etc. Each data type requires different amounts of memory and has some specific operations which can be performed over it. The data type is a collection of data with values having fixed values, meaning as well as its characteristics.\n\nThe data types in C can be classified as follows:\n'''),
+           
+           
             const SizedBox(
               height: 50,
             ),
+
+             _semiboldtext('''Primitive Data Types:'''),
+             _normaltext('''Primitive data types are the most basic data types that are used for representing simple values such as integers, float, characters, etc.\n'''),
+
+
+           _semiboldtext('''User Defined Data Types:'''),
+           _normaltext('''The user-defined data types are defined by the user himself.\n'''),
+
+           _semiboldtext('''Derived Types:'''),
+           _normaltext('''The data types that are derived from the primitive or built-in datatypes are referred to as Derived Data Types'''),
+
+
+
+
+
+      
+
+
+
+
+
+_normaltext('''\nDifferent data types also have different ranges up to which they can store numbers. These ranges may vary from compiler to compiler. Below is a list of ranges along with the memory requirement and format specifiers on the 32-bit GCC compiler.\n\n'''),
+
+
             _MakeTable(),
             const SizedBox(
               height: 50,
             ),
-            _CodeArea(),
+            _CodeArea('''
+
+ void main() {
+
+
+    int a;
+    float b;
+    double c;
+    char d;
+
+    }
+    '''),
             SizedBox(
               height: 20,
             ),
@@ -1509,6 +1549,16 @@ Widget _CodeArea(String code) {
 
 
 
+   
+  Widget _semiboldtext(String str)
+  {
+     return Text(str,
+                style: const TextStyle(
+                    color: Colors.green,
+                    fontSize: 21,
+                
+                    fontWeight: FontWeight.bold));
+  }
 
 
     Widget _normaltext(String str)
@@ -1575,7 +1625,7 @@ image: AssetImage(
 
 '''\nSyntax of Array Declaration\n'''
                 ),
-                _normaltext(
+                _semiboldtext(
 '''             
 
     data_type array_name [size];
@@ -1936,6 +1986,18 @@ Widget _CodeArea(String code) {
                     fontWeight: FontWeight.bold));
   }
 
+  Widget _semiboldtext(String str)
+  {
+     return Text(str,
+                style: const TextStyle(
+                    color: Colors.green,
+                    fontSize: 21,
+                
+                    fontWeight: FontWeight.bold));
+  }
+
+
+
 
 
 
@@ -1993,13 +2055,13 @@ image: AssetImage(
                 _boldtext("\nC Structure Declaration"),
                 _normaltext(
 '''We have to declare structure in C before using it in our program. In structure declaration, we specify its member variables along with their datatype.
- We can use the struct keyword to declare the structure in C using the following syntax:
+ We can use the struct keyword to declare the structure in C using the following syntax: '''),
  
                        
                        
                        
                        
-       struct structure_name {
+     _semiboldtext('''\n\n struct structure_name {
                                           
                   data_type member_name1;
                   data_type member_name1;
